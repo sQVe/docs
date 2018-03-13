@@ -1,0 +1,67 @@
+*cheat*
+
+            ┌───────────────────────────────────────────┐
+            │╻ ╻╻┏┳┓   ┏━╸╻ ╻┏━╸┏━┓╺┳╸   ┏━┓╻ ╻┏━╸┏━╸╺┳╸│
+            │┃┏┛┃┃┃┃   ┃  ┣━┫┣╸ ┣━┫ ┃    ┗━┓┣━┫┣╸ ┣╸  ┃ │
+            │┗┛ ╹╹ ╹   ┗━╸╹ ╹┗━╸╹ ╹ ╹    ┗━┛╹ ╹┗━╸┗━╸ ╹ │
+            └───────────────────────────────────────────┘
+
+
+This is a personal cheat sheet for nvim by sQVe. It tries to keep a focus on
+the defaults but may, when needed, diverge to correctly reflect the following
+nvim setup:
+
+https://github.com/sQVe/dotfiles/tree/master/config/nvim
+
+=============================================================================
+
+CONTENTS                                                     *cheat-contents*
+--------
+
+  1. Motions ................................................ |cheat-motions|
+
+
+=============================================================================
+
+1. Motions                                                    *cheat-motions*
+
+1.1 Cursor motions                                     *cheat-cursor-motions*
+------------------
+
+  h     move cursor left
+  j     move cursor down
+  k     move cursor up w
+  j     move cursor right
+
+  H     move to first non-whitespace character of the line
+  J     move cursor down by 10 lines (10j)
+  K     move cursor up by 10 lines (10k)
+  L     move to last non-whitespace character of the line
+
+1.2 Word motions                                         *cheat-word-motions*
+----------------
+
+  w     move forwards to start of word
+  W     move forwards to start of WORD
+  e     move forwards to end of word
+  E     move forwards to end of WORD
+
+  b     move backwards to start of word
+  B     move backwards to start of WORD
+  ge    move backwards to end of word
+  gE    move backwards to end of WORD
+
+1.3 Jump motions                                         *cheat-jump-motions*
+----------------
+
+  fx    jump to next character x
+  Fx    jump to previous character x
+  tx    jump to before next character x
+  Tx    jump to after previous character x
+  ;     repeat f, t, F, T motions
+  ,     repeat f, t, F, T motions backwards
+
+  Add easymotion specific jumps here
+
+=============================================================================
+vim:tw=78:ts=8:ft=help:norl:
