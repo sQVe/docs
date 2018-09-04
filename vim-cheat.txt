@@ -8,7 +8,7 @@
 
 
 This is a personal cheat sheet for neovim by sQVe. It tries to keep a focus on
-the defaults but may, when needed, diverge to correctly reflect thefollowing
+the defaults but may, when needed, diverge to correctly reflect the following
 neovim setup:
 
 https://github.com/sQVe/dotfiles/tree/master/config/nvim
@@ -54,8 +54,6 @@ Contents                                                      *cheat-contents*
   5gg | 5G       go to line 5
   gg             go to first line
   G              go to last line
-  J              move cursor down by 10 lines (10j)
-  K              move cursor up by 10 lines (10k)
 
   <L>h           move cursor to any word left
   <L>j           move cursor to any line down
@@ -73,6 +71,8 @@ Contents                                                      *cheat-contents*
   H | ^          jump to first non-whitespace character of line
   L | g_         jump to last non-whitespace character of line
 
+  TODO: Add easymotion line motions
+
 1.2 Word motions                                          *cheat-word-motions*
 ----------------
 
@@ -87,6 +87,9 @@ Contents                                                      *cheat-contents*
   gE             move backwards to end of WORD
 
   5w             move forwards to start of word 5
+
+  TODO: Add easymotion word motions
+
 
 1.3 Character motions                                *cheat-character-motions*
 ---------------------
@@ -156,6 +159,24 @@ Contents                                                      *cheat-contents*
 4. Edit
 =======
 
+  These commands edit existing text, and in some cases also enters insert
+  mode. It is very common that insert commands are prepended by motion
+  commands. Some examples of this are:
+
+    asdasd
+
+  d
+  c
+  r              replace a single character
+  J              join line below to the current one with one space in between
+  cc             change (replace) entire line
+  s              delete character and substitute text
+  S              delete line and substitute text (same as cc)
+  xp             transpose two letters
+  u              undo
+  Ctrl + r       redo
+  .              repeat last command
+
   Esc | <C-c>    exit
 
 
@@ -167,8 +188,20 @@ Contents                                                      *cheat-contents*
 TODO
 -----------------------------------------------------------------------------
 
+Delete around and in
+i(
+i{
+a(
+a{
+da"
+etc
+
 Reformat
 gq
+gu = to lower
+gU = to upper
+~ toggle case
+
 
 Completion
 <C-x><C-f> file
@@ -194,7 +227,7 @@ Folds
 za toggle
 zc close
 zo open
-zr open one level
+zr open one level (all)
 zm close one level
 z"X" to run on all
 
