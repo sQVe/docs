@@ -4,3 +4,4 @@ The following list is a list of development dependencies that should be phased o
 
 Installed dependencies:
   - ruby-compass
+  - netextender

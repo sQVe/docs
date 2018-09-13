@@ -26,6 +26,7 @@ Contents                                                      *cheat-contents*
   3. Insert ................................................... |cheat-insert|
   4. Edit ....................................................... |cheat-edit|
 
+
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 1. Motions                                                     *cheat-motions*
@@ -43,7 +44,8 @@ Contents                                                      *cheat-contents*
     d    delete
     y    yank
 
-1.1 Cursor motions                                      *cheat-cursor-motions*
+
+1.1 Cursor motions                                      *cheat-motions-cursor*
 ------------------
 
   h              move cursor left
@@ -71,7 +73,6 @@ Contents                                                      *cheat-contents*
   H | ^          jump to first non-whitespace character of line
   L | g_         jump to last non-whitespace character of line
 
-  TODO: Add easymotion line motions
 
 1.2 Word motions                                          *cheat-word-motions*
 ----------------
@@ -87,8 +88,6 @@ Contents                                                      *cheat-contents*
   gE             move backwards to end of WORD
 
   5w             move forwards to start of word 5
-
-  TODO: Add easymotion word motions
 
 
 1.3 Character motions                                *cheat-character-motions*
@@ -108,9 +107,10 @@ Contents                                                      *cheat-contents*
   <L>tx          jump forwards to before any character x
   <L>Tx          jump backwards to after any character x
 
+
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-2. Scrolling
+2. Scrolling                                                 *cheat-scrolling*
 ============
 
   These commands move the contents of the window.  If the cursor position is
@@ -127,9 +127,10 @@ Contents                                                      *cheat-contents*
   zz             move screen with cursor middle
   zb             move screen with cursor bottom
 
+
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-3. Insert
+3. Insert                                                       *cheat-insert*
 =========
 
   These commands enter insert mode at specific cursor positions. It is very
@@ -145,6 +146,10 @@ Contents                                                      *cheat-contents*
     2i    repeat inserted text twice on exit
     4o    repeat inserted text four time on new lines on exit
 
+
+3.1 Commands                                           *cheat-insert-commands*
+------------
+
   i              insert before the cursor
   I              insert at the beginning of the line
   a              append after the cursor
@@ -152,34 +157,54 @@ Contents                                                      *cheat-contents*
   o              open new line below current line
   O              open new line after current line
 
-  Esc | <C-c>    exit
+
+  exit: Esc | jj | <C-c>
+
 
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 4. Edit
 =======
 
-  These commands edit existing text, and in some cases also enters insert
-  mode. It is very common that insert commands are prepended by motion
+  These commands edit existing text, and in some also enters insert
+  mode after. It is very common that insert commands are prepended by motion
   commands. Some examples of this are:
 
-    asdasd
+    cw    change word
+    dw    delete word
 
-  d
-  c
+  All edit commands are repeatable by prepending a number to the command.
+  Examples of this are:
+
+    2dw   delete two words
+    4cc   delete 4 entire lines and enter insert mode
+    2J    join 2 lines
+
+
+3.1 Commands                                             *cheat-edit-commands*
+------------
+
+  d              delete
+  c              change
+  x              delete character
+  s              delete character and substitute text
   r              replace a single character
   J              join line below to the current one with one space in between
+
   cc             change (replace) entire line
-  s              delete character and substitute text
   S              delete line and substitute text (same as cc)
   xp             transpose two letters
   u              undo
   Ctrl + r       redo
   .              repeat last command
 
-  Esc | <C-c>    exit
 
+  exit: Esc | jj | <C-c>
 
+Topics:
+Commands
+Delete around and in
+Reformat
 
 
 
