@@ -19,12 +19,15 @@ Contents                                                      *cheat-contents*
 ========
 
   1. Motions ................................................. |cheat-motions|
-    1.1 Cursor motions ................................ |cheat-cursor-motions|
-    1.2 Word motions .................................... |cheat-word-motions|
-    1.3 Character motions .......................... |cheat-character-motions|
+    1.1 Cursor motions ................................ |cheat-motions-cursor|
+    1.2 Word motions .................................... |cheat-motions-word|
+    1.3 Character motions .......................... |cheat-motions-character|
   2. Scrolling ............................................. |cheat-scrolling|
   3. Insert ................................................... |cheat-insert|
   4. Edit ....................................................... |cheat-edit|
+    3.1 Commands ....................................... |cheat-edit-commands|
+    3.2 In and around ................................. |cheat-edit-in-around|
+    3.3 Reformat ....................................... |cheat-edit-reformat|
 
 
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -57,11 +60,6 @@ Contents                                                      *cheat-contents*
   gg             go to first line
   G              go to last line
 
-  <L>h           move cursor to any word left
-  <L>j           move cursor to any line down
-  <L>k           move cursor to any line up
-  <L>l           move cursor to any work right
-
   %              jump to matching pair
   }              jump to next paragraph
   {              jump to previous paragraph
@@ -70,9 +68,15 @@ Contents                                                      *cheat-contents*
 
   0              jump to start of line
   $              jump to end of line
-  H | ^          jump to first non-whitespace character of line
-  L | g_         jump to last non-whitespace character of line
+  <L>h | ^       jump to first non-whitespace character of line
+  <L>l | g_      jump to last non-whitespace character of line
 
+  <L>j           move cursor to any line down
+  <L>k           move cursor to any line up
+
+  H              move cursor to highest visible line
+  M              move cursor to middle visible line
+  L              move cursor to lowest visible line
 
 1.2 Word motions                                          *cheat-word-motions*
 ----------------
@@ -89,6 +93,8 @@ Contents                                                      *cheat-contents*
 
   5w             move forwards to start of word 5
 
+  <L>w           move cursor to any word forward
+  <L>b           move cursor to any word backwards
 
 1.3 Character motions                                *cheat-character-motions*
 ---------------------
@@ -115,6 +121,7 @@ Contents                                                      *cheat-contents*
 
   These commands move the contents of the window.  If the cursor position is
   moved off of the window, the cursor is moved onto the window.
+
 
   <C+y>          move screen up one line (without moving cursor)
   <C+e>          move screen down one line (without moving cursor)
@@ -146,9 +153,6 @@ Contents                                                      *cheat-contents*
     2i    repeat inserted text twice on exit
     4o    repeat inserted text four time on new lines on exit
 
-
-3.1 Commands                                           *cheat-insert-commands*
-------------
 
   i              insert before the cursor
   I              insert at the beginning of the line
@@ -184,27 +188,36 @@ Contents                                                      *cheat-contents*
 3.1 Commands                                             *cheat-edit-commands*
 ------------
 
-  d              delete
   c              change
-  x              delete character
-  s              delete character and substitute text
+  d              delete
   r              replace a single character
-  J              join line below to the current one with one space in between
+  s              substitute character
+  x              delete character
 
-  cc             change (replace) entire line
+  C              change until end of line
+  D              delete until end of line
+  J              join line below to the current one with one space in between
   S              delete line and substitute text (same as cc)
+  cc             change (replace) entire line
   xp             transpose two letters
+  .              repeat last command
   u              undo
   Ctrl + r       redo
-  .              repeat last command
 
 
-  exit: Esc | jj | <C-c>
 
-Topics:
-Commands
-Delete around and in
-Reformat
+3.2 In and around                                       *cheat-edit-in-around*
+-----------------
+
+
+
+
+3.2 Reformat                                             *cheat-edit-reformat*
+------------
+
+
+
+
 
 
 
@@ -219,6 +232,11 @@ i{
 a(
 a{
 da"
+ip
+is
+it
+iw
+
 etc
 
 Reformat
@@ -226,6 +244,14 @@ gq
 gu = to lower
 gU = to upper
 ~ toggle case
+
+Commands
+:
+ö = :
+good commands to know
+
+
+Plugins section?
 
 
 Completion
@@ -248,6 +274,11 @@ mx
 `x
 :delm! | delm A-Z0-9
 
+Ranges
+start,end
+3,6 line 3 - 6
+-3,+6 line -3 and +6 from current line
+
 Folds
 za toggle
 zc close
@@ -262,7 +293,9 @@ ctrl + o in insert goes quick normal mode
 
 GLOBAL g//
 SED    s//
+\v for perlish
 
+use \ for all chars that should be "regex", except . * etc
 
 %s entire file
 s current line
@@ -282,6 +315,12 @@ s//e+3 next 3 chars of result
 
 d + s// delete to search
 y + s// yank to search
+
+?. Register
+
+"ap = paste from register a
+:g/asd/y A = yank to register A
+
 
 ?. Plugins
 
